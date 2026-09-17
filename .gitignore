@@ -1,0 +1,34 @@
+# Este repositório é só de DOCUMENTAÇÃO e RELEASES.
+# O código-fonte do Winple Player NÃO é publicado aqui.
+# As regras abaixo evitam subir código ou artefatos de build sem querer.
+
+# Código-fonte e scripts do programa
+winple_player.py
+build_winple_player.py
+*.iss
+*.bat
+limpar_registros.py
+registrar_menu_contexto.py
+
+# Recursos do programa
+*.ico
+*.png
+bass/
+plugins/
+
+# Artefatos de build
+build/
+dist/
+*.spec
+__pycache__/
+*.pyc
+
+# Configurações locais e dados do usuário
+config.json
+radios_*.json
+*.log
+
+# Arquivos de sistema
+Thumbs.db
+desktop.ini
+.DS_Store
