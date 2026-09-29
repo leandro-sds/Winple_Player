@@ -12,6 +12,9 @@ de tela.
 
 - **Toca suas músicas** — MP3, WAV, OGG, FLAC, M4A, AAC, WMA
 - **Toca rádios da internet** — Icecast, Shoutcast e HLS, sem cortes
+- **Podcasts** — cadastre pelo feed RSS ou importe de outro aplicativo
+  (OPML), ouça direto da internet ou baixe os episódios; o programa
+  lembra onde cada episódio parou
 - **Rádios favoritas** — cadastre as suas e troque entre elas com B e Z,
   como num radinho
 - **Pastas favoritas** — guarda o caminho, não a lista: músicas novas
@@ -28,7 +31,7 @@ de tela.
 - **Backup completo** — exporte e importe todas as configurações num
   arquivo, para recuperar tudo rápido ao trocar de computador
 - **Retoma de onde parou** — volta com a última playlist pronta pra
-  tocar
+  tocar, e cada episódio de podcast continua do ponto exato
 - **Verifica atualizações sozinho** — avisa quando sai uma versão
   nova, sem baixar nada sem sua permissão
 - **Listas de reprodução** — abre e salva `.m3u`, `.m3u8` e `.pls`
@@ -43,7 +46,10 @@ Este é o ponto central do projeto, não um detalhe:
 - Testado com **NVDA**
 - Sem elementos visuais desnecessários competindo por atenção
 - O que está tocando aparece no título da janela (que o leitor de tela
-  anuncia no Alt+Tab)
+  anuncia no Alt+Tab e lê no NVDA+T), sem interromper a cada troca
+  automática de música
+- Esc volta um nível: do episódio para a lista de episódios, da rádio
+  para as favoritas, e daí para a janela principal
 - Listas navegáveis em vez de caixas de mensagem
 - Avisos falados só quando informam algo útil, sem falatório
 - Pressione **F1** a qualquer momento para ver todos os atalhos
@@ -63,6 +69,9 @@ Este é o ponto central do projeto, não um detalhe:
 | **Ctrl+D** | Pastas favoritas |
 | **Ctrl+L** | Abrir rádio por URL |
 | **Ctrl+F** | Rádios favoritas |
+| **Ctrl+Shift+P** | Meus podcasts |
+| **T** / **Shift+T** | Tempo da faixa / o que está tocando |
+| **Esc** | Voltar um nível (episódios, podcasts, favoritas) |
 | **Ctrl+E** | Equalizador, efeitos e normalizador |
 | **Ponto/Vírgula** | Velocidade ou tom (escolha em Preferências) |
 
