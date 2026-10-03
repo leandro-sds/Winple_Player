@@ -1,6 +1,6 @@
 # Winple Player — Manual do usuário
 
-**Versão 1.1.0**
+**Versão 1.1.1**
 
 Um player de áudio feito para ser usado inteiro pelo teclado, com foco
 em acessibilidade. Toca suas músicas, rádios da internet e podcasts,
@@ -241,6 +241,8 @@ linha traz o título, a data, a duração e a situação do episódio:
 - **Enter** — toca o episódio e fecha as telas
 - **Alt+D** — mostra a descrição do episódio
 - **Alt+M** — marca como ouvido / não ouvido
+- **Ctrl+D** — o leitor de tela lê a descrição do episódio ali mesmo,
+  sem abrir janela (Alt+D abre a descrição numa caixa de texto)
 - **Ctrl+C** ou botão **Copiar link do episódio** (**Alt+C**) —
   copia o **link do episódio** (a página dele, para mandar a alguém).
   Se o episódio não tiver página própria, copia o link do áudio
@@ -357,6 +359,18 @@ correspondente na tela leva direto lá. Por padrão valem só para
 arquivos locais, mas isso também é configurável (mesma opção acima).
 Cada plugin tem sua própria licença; o Winple Player sabe
 hospedá-los, mas não vem com nenhum incluído.
+
+Na lista de plugins, **Espaço** ou **Enter** liga e desliga o plugin
+selecionado — só ele entra ou sai, os outros continuam como estão. Os
+plugins processam o som **depois** do equalizador, dos efeitos e do
+normalizador, na ordem da lista. O Winple Player usa plugins **VST 2 de
+64 bits**; se um plugin não puder ser ativado (por exemplo, por ser de
+32 bits, ser VST3 ou depender de algum arquivo que não está instalado),
+o programa avisa o motivo — inclusive quando o plugin falha ao abrir
+uma música. O plugin precisa ter os mesmos bits do Winple Player: o
+Winple de 64 bits usa plugins de 64 bits. Se você atualizar um plugin para uma versão
+com outros parâmetros, os ajustes antigos dele são descartados, para
+não irem parar no parâmetro errado.
 
 ### Outros
 

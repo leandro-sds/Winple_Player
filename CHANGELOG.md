@@ -5,6 +5,26 @@
 > nome próprio, que não depende mais das iniciais do autor. É o mesmo
 > programa, recomeçando a numeração de versões do zero sob o novo nome.
 
+## 1.1.1
+
+- Listas vazias (podcasts, rádios favoritas, pastas favoritas, lista de
+  reprodução) dizem o que está vazio, em vez de o leitor de tela falar
+  só "indisponível"
+- **Ctrl+D** na lista de episódios: o leitor de tela lê a descrição do
+  episódio ali mesmo, sem abrir janela
+- Plugins:
+  - Enter na lista de plugins liga e desliga o plugin (antes tocava o
+    som de erro do Windows); Enter nos campos de valor aplica o valor
+  - Ligar ou desligar um plugin não recarrega mais os outros
+  - Os plugins processam sempre depois do equalizador, dos efeitos e do
+    normalizador, na ordem da lista
+  - Quando um plugin não ativa, o programa diz o motivo exato, inclusive
+    ao abrir uma música, em vez de só tocar o som de erro do Windows
+  - Ajustes salvos de uma versão antiga de um plugin não são mais
+    aplicados nos parâmetros errados depois que o plugin é atualizado
+- Atualizar todos os podcasts: quem não pôde ser atualizado aparece com
+  o nome e o motivo
+
 ## 1.1.0
 
 ### Podcasts (novo)
