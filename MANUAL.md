@@ -1,6 +1,6 @@
 # Winple Player — Manual do usuário
 
-**Versão 1.1.3**
+**Versão 1.1.4**
 
 Um player de áudio feito para ser usado inteiro pelo teclado, com foco
 em acessibilidade. Toca suas músicas, rádios da internet e podcasts,
@@ -27,9 +27,12 @@ use também **Shift+T**.
 
 Nas músicas do computador, o título traz o número da faixa gravado no
 próprio arquivo (a etiqueta de número da faixa, quando existe) e o
-nome da música, sem a extensão (".mp3" e afins). Nos episódios de
-podcast, o número é a posição do episódio na lista; nas rádios, não há
-número.
+nome da música, sem a extensão (".mp3" e afins). Em Preferências, a
+opção "Número antes do nome da música, no título" permite trocar esse
+número pela posição da música na lista de reprodução (por exemplo, 37
+numa lista de 120), ou não mostrar número nenhum. Nos episódios de
+podcast, o número é sempre a posição do episódio na lista; nas rádios,
+não há número.
 
 Para não interromper o leitor de tela, o programa não anuncia ações
 simples como pausar, continuar, parar ou voltar ao início da faixa —
@@ -492,6 +495,13 @@ No menu **Arquivo → Preferências** (ou **Ctrl+P**), você pode ajustar:
   manualmente (B, Z, Numpad 1/3, Ctrl+Z, Ctrl+B), na troca natural no
   fim da faixa, e também na troca entre rádios favoritas. Episódios de
   podcast não usam cruzamento.
+- **Número antes do nome da música, no título** — o número da faixa
+  gravado no arquivo (padrão), a posição da música na lista de
+  reprodução ou nenhum número.
+- **Entrada suave no começo de cada música e episódio** — ligada por
+  padrão: cada faixa começa baixinho e sobe até o seu volume em 1,5
+  segundo. Desligada, a faixa começa direto no volume
+  escolhido. Não muda os outros fades (setas, Shift+V, cruzamento).
 - **Esc também fecha o programa** — desligado por padrão.
 - **Permitir aumentar o volume acima de 100%** — desligado por
   padrão; acima de 100% o som pode distorcer, dependendo da faixa.

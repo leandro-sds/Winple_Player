@@ -5,6 +5,28 @@
 > nome próprio, que não depende mais das iniciais do autor. É o mesmo
 > programa, recomeçando a numeração de versões do zero sob o novo nome.
 
+## 1.1.4
+
+- Nova opção em Preferências: "Número antes do nome da música, no
+  título". Escolha entre o número da faixa gravado no arquivo (padrão),
+  a posição da música na lista de reprodução (como até a versão 1.1.1)
+  ou nenhum número. A mudança vale na hora, para a música que está
+  tocando
+- Nova opção em Preferências: "Entrada suave no começo de cada música e
+  episódio". Ligada por padrão, como sempre foi; desligada, a faixa
+  começa direto no volume escolhido. Os outros fades (setas, Shift+V,
+  cruzamento entre faixas) não mudam
+- A entrada suave ficou um pouco mais longa: 1,5 segundo (era 1,1)
+- Abrir um arquivo pelo DOSVOX com o Winple Player já aberto (por
+  exemplo, ouvindo uma rádio) não dá mais "não foi possível tocar": o
+  DOSVOX manda só o nome do arquivo, e agora o programa completa com a
+  pasta antes de abrir
+- Arquivos abertos pelo Explorer ou pelo DOSVOX começam a tocar mais
+  rápido: cerca de meio segundo depois do Enter, em vez de até 2
+  segundos. Numa seleção grande, um arquivo que chegue atrasado entra na
+  lista no lugar certo da ordem alfabética, sem interromper o que está
+  tocando
+
 ## 1.1.3
 
 - Selecionar mais de 15 arquivos no Explorer (por exemplo, com Ctrl+A)
