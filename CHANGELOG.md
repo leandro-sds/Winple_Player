@@ -5,6 +5,113 @@
 > nome próprio, que não depende mais das iniciais do autor. É o mesmo
 > programa, recomeçando a numeração de versões do zero sob o novo nome.
 
+## 2.0.5
+
+- Botões de mídia: o Winple responde aos botões de fones de ouvido e
+  caixas de som Bluetooth (tocar e pausar, próxima e anterior) e às
+  teclas de mídia do teclado (tocar/pausar, próxima, anterior e parar),
+  mesmo minimizado. No Windows 10 e 11, aparece no painel de mídia do
+  Windows mostrando o que está tocando. Pode ser desligado nas
+  Preferências, em "Responder aos botões de mídia"
+- Novo: Arquivo, Abrir arquivo compactado (Ctrl+Alt+L). Abre ZIP, RAR,
+  7z e TAR (inclusive .tar.gz, .tar.bz2 e .tar.xz) e toca as músicas e
+  vídeos que estão dentro, com todos os recursos de sempre. Descompacta
+  só o áudio e o vídeo, dá para cancelar, e apaga tudo quando o Winple
+  fecha. Arquivos protegidos por senha ou danificados são avisados
+- Abrir um compactado por engano em "Abrir lista de reprodução"
+  (Ctrl+Shift+L) mostra o aviso "Para abrir arquivo compactado,
+  pressione Ctrl+Alt+L"
+- Quando um vídeo não toca porque falta um arquivo do VLC (em geral,
+  removido pelo antivírus), o Winple diz qual arquivo falta e como
+  resolver, em vez da mensagem genérica
+- Novo: Ajuda, Verificar arquivos do Winple. Confere os arquivos de
+  áudio e vídeo do programa e, se houver problema, copia um relatório
+  para colar num e-mail ao suporte
+- Novo: Preferências, Gravar registro de diagnóstico (desligado por
+  padrão), que se abre por Ajuda, Abrir pasta do registro de
+  diagnóstico. Substitui as duas opções de registro que existiam antes
+- A cada atualização, a parte de vídeos (VLC) é instalada de novo por
+  inteiro, reparando arquivos que tenham sido apagados
+- Novo: Shift+F1, ou Ajuda, O que há de novo nesta versão. Depois de
+  cada atualização, as novidades também aparecem sozinhas, uma vez
+- "Abrir lista de reprodução" recusa arquivos que não são listas.
+  Antes, abrir um arquivo assim por ali podia deixar o arquivo de
+  configurações enorme e o Winple lento para abrir
+- Se o arquivo de configurações estiver danificado e grande demais, o
+  Winple o deixa de lado sozinho, volta às configurações padrão e
+  avisa. Rádios, podcasts e biblioteca não são afetados
+
+## 2.0.4
+
+- O Winple Player se atualiza por dentro, sem abrir o navegador:
+  respondendo "Sim, baixar e instalar", ele baixa a atualização,
+  falando o andamento, confere se o arquivo chegou inteiro, instala e
+  abre de novo sozinho, já atualizado. O download pode ser cancelado, e
+  se falhar o programa oferece o navegador, como antes
+- O Winple portátil também se atualiza por dentro, na mesma pasta,
+  mantendo as configurações e sem a pergunta de permissão do Windows
+  (ela só aparece se a pasta for protegida, como Arquivos de Programas)
+- Como quem baixa a atualização é a versão já instalada, a chegada à
+  2.0.4 ainda foi pelo navegador; da 2.0.5 em diante é tudo por dentro
+
+## 2.0.3
+
+- "Pular para um tempo" agora é Ctrl+T, no lugar de Ctrl+J. Os atalhos
+  de tempo ficam todos na letra T: T fala o tempo, Shift+T fala o que
+  está tocando e Ctrl+T pula para um tempo
+- Novo atalho Ctrl+I: copia o artista e a música que estão tocando e
+  fala o que copiou. Na rádio, copia só a música do momento; no
+  podcast, o título do episódio e o nome do podcast. Duas vezes rápido
+  copia todas as informações, o mesmo texto da janela da letra I
+- O texto copiado pelo Winple (informações da música, links de
+  episódios e de podcasts) continua na área de transferência mesmo
+  depois de fechar o programa
+
+## 2.0.2
+
+- Na lista de episódios, Espaço marca e desmarca episódios, Ctrl+A
+  marca todos e Ctrl+Shift+A desmarca todos. O leitor de tela fala
+  "Marcado" no começo de cada um marcado
+- Com episódios marcados, o botão Baixar (Alt+B) vira "Baixar 5
+  marcados", por exemplo, e coloca todos na fila de uma vez, pulando os
+  que já estão baixados ou na fila
+- Com episódios marcados, Ctrl+C e "Copiar links dos marcados" (Alt+C)
+  copiam os links de todos, um por linha; Ctrl+Shift+C e "Copiar links
+  do áudio dos marcados" (Alt+L) copiam os links diretos do áudio
+- Novo botão "Cancelar todos os downloads" (Alt+N), que aparece só
+  enquanto há downloads em andamento ou na fila
+- Downloads que falham por instabilidade do servidor são tentados de
+  novo sozinhos, até 3 vezes; um download cortado no meio é percebido e
+  baixado de novo
+- Tocar um episódio pela internet também tenta de novo sozinho, até 3
+  vezes, quando o servidor responde mal (o antigo "erro 47")
+- Mensagens de erro ao baixar e tocar episódios em português claro, e
+  um aviso próprio quando o arquivo do episódio não existe mais no
+  servidor
+
+## 1.1.5 a 2.0.1
+
+Resumo das novidades destas versões (os detalhes de cada uma estão nas
+notas de lançamento da época):
+
+- Vídeos (2.0.0): MP4, MKV, AVI, MOV, WMV, WebM e outros, tocados pelo
+  VLC, com o som passando pelo volume, balanço, equalizador,
+  normalizador e plugins VST. Sincronia automática entre voz e imagem,
+  F2 para trocar o áudio, F3 para a legenda, Alt+V para o menu Vídeo,
+  F11 para tela cheia, e a opção "Preferir áudio em português nos
+  vídeos"
+- Biblioteca (Ctrl+M): as músicas por artista, álbum, gênero e ano,
+  com busca, "Ver por", tocar tudo, fila a seguir e enfileirar. A
+  primeira leitura roda em segundo plano; depois, só o que mudou
+- Arquivos MIDI, com o soundfont GeneralUser GS incluído e a escolha de
+  outros soundfonts nas Preferências
+- Novos formatos de áudio: Opus, APE, MPC, WavPack, TTA e OptimFROG
+- Lista de reprodução (J) com busca (Alt+B) e Shift+Enter para pôr a
+  música na fila a seguir
+- E e Shift+E enfileiram arquivos e pastas no fim da lista, sem
+  interromper; no Explorer, "Enfileirar no Winple Player"
+- I ou Alt+3 mostra as informações do que está tocando
+
 ## 1.1.4
 
 - Nova opção em Preferências: "Número antes do nome da música, no

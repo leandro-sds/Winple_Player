@@ -1,11 +1,12 @@
 # Winple Player — Manual do usuário
 
-**Versão 1.1.4**
+**Versão 2.0.5**
 
-Um player de áudio feito para ser usado inteiro pelo teclado, com foco
-em acessibilidade. Toca suas músicas, rádios da internet e podcasts,
-com equalizador, normalizador, controle de velocidade/tom e suporte a
-plugins VST.
+Um player de áudio e vídeo feito para ser usado inteiro pelo teclado,
+com foco em acessibilidade. Toca suas músicas, vídeos, rádios da
+internet e podcasts, organiza sua coleção numa biblioteca, abre
+arquivos compactados, e tem equalizador, normalizador, controle de
+velocidade/tom e suporte a plugins VST.
 
 ---
 
@@ -43,7 +44,8 @@ liga e desliga, avisos e erros.
 Você pode fazer tudo de dois jeitos: pelas **teclas de atalho** (mais
 rápido) ou pelos **menus** (pressione Alt para abrir). A qualquer
 momento, **F1** mostra a lista completa de atalhos numa tela
-navegável (Esc fecha).
+navegável (Esc fecha), e **Shift+F1** mostra as novidades da versão
+que você está usando.
 
 ---
 
@@ -74,9 +76,22 @@ navegável (Esc fecha).
 | **Ctrl+Shift+Seta para a esquerda** | Balanço para a esquerda |
 | **T** | Anuncia o tempo atual da faixa |
 | **Shift+T** | Fala o que está tocando |
+| **Ctrl+T** | Pula para um tempo específico - o campo já vem preenchido com o tempo atual da faixa |
 | **Home** | Volta ao início da faixa atual |
 | **End** | Vai para o fim da faixa atual |
-| **Ctrl+J** | Pula para um tempo específico - o campo já vem preenchido com o tempo atual da faixa |
+| **I** ou **Alt+3** | Mostra as informações do que está tocando numa caixa de texto |
+| **Ctrl+I** | Copia o artista e a música que estão tocando. Duas vezes rápido copia todas as informações |
+
+Os atalhos de tempo ficam todos na letra T: **T** fala o tempo,
+**Shift+T** fala o que está tocando e **Ctrl+T** pula para um tempo.
+
+**Copiando o que está tocando (Ctrl+I):** o programa copia para a
+área de transferência e fala o que copiou. Na rádio, copia só a música
+do momento, sem o nome da rádio, e avisa quando a rádio não informa a
+música; no podcast, o título do episódio e o nome do podcast.
+Apertando **Ctrl+I** duas vezes rápido, copia todas as informações, o
+mesmo texto da janela que a letra **I** abre. Tudo o que o Winple copia
+continua na área de transferência mesmo depois de fechar o programa.
 
 Quando o volume, o balanço, a velocidade ou o tom chegam no limite, o
 programa avisa em voz ("Volume no máximo", "Velocidade mínima"...), em
@@ -107,16 +122,21 @@ juntos" como reserva.
 
 | Tecla | O que faz |
 |---|---|
-| **L** | Abrir um ou mais arquivos |
+| **L** | Abrir um ou mais arquivos (músicas ou vídeos) |
 | **Shift+L** | Abrir uma pasta inteira (incluindo subpastas) |
+| **Ctrl+Alt+L** | Abrir um arquivo compactado (ZIP, RAR, 7z, TAR) |
 | **Ctrl+L** | Abrir uma rádio pela URL |
 | **Ctrl+Shift+L** | Abrir uma lista pronta (arquivos .m3u ou .pls) |
+| **E** | Enfileirar um ou mais arquivos no fim da lista, sem interromper o que toca |
+| **Shift+E** | Enfileirar uma pasta no fim da lista |
 | **J** | Ver a lista de reprodução / pular para um arquivo |
+| **Ctrl+M** | Abrir a biblioteca |
 | **Ctrl+D** | Ver suas pastas favoritas de músicas |
 | **Ctrl+Shift+D** | Cadastrar uma pasta favorita |
 
 > Abrir uma pasta nova **substitui** a lista atual, nunca soma com o
-> que já estava tocando.
+> que já estava tocando. Para somar, use **E** ou **Shift+E**
+> (enfileirar).
 
 > **Abrindo de fora do programa** — pelo DOSVOX, pelo "Reproduzir com
 > Winple Player" do Explorer ou com um duplo-clique —, o que chegou
@@ -127,6 +147,27 @@ juntos" como reserva.
 
 Ao abrir uma rádio pela URL, pode digitar o endereço sem o "http://"
 (por exemplo `radio.com.br:8000/live`) — o programa completa sozinho.
+
+"Abrir lista de reprodução" (Ctrl+Shift+L) aceita só listas. Se você
+escolher ali um arquivo de áudio, vídeo, programa ou compactado, o
+Winple recusa e não mexe na lista atual. Para um arquivo compactado,
+ele avisa: "Para abrir arquivo compactado, pressione Ctrl+Alt+L".
+
+### Arquivos compactados
+
+**Arquivo → Abrir arquivo compactado** (**Ctrl+Alt+L**) abre arquivos
+ZIP, RAR, 7z e TAR (inclusive `.tar.gz`, `.tar.bz2` e `.tar.xz`) e toca
+as músicas e vídeos que estão dentro, com todos os recursos de sempre:
+plugins, efeitos, crossfade e posição.
+
+- O Winple descompacta só os arquivos de áudio e vídeo, numa pasta
+  própria, e abre essa pasta. Enquanto descompacta, dá para cancelar.
+- Nada fica acumulado no computador: os arquivos descompactados são
+  apagados quando o Winple fecha. Por isso, uma lista vinda de um
+  arquivo compactado não é reaberta na próxima vez; o Winple avisa e
+  basta abrir o arquivo de novo.
+- Arquivos protegidos por senha ou danificados são avisados, e a lista
+  atual não é mexida.
 
 ### Pastas favoritas
 
@@ -261,13 +302,31 @@ linha traz o título, a data, a duração e a situação do episódio:
   **Baixar**; **Cancelar download**, enquanto baixa; **Tirar da fila
   de downloads**, se estiver esperando; e **Remover download**, depois
   de baixado (apaga o arquivo, pedindo confirmação)
+- **Alt+N** — **Cancelar todos os downloads**. O botão aparece só
+  enquanto há downloads em andamento ou na fila
+
+**Marcando vários episódios:**
+- **Espaço** — marca e desmarca o episódio. O leitor de tela fala
+  "Marcado" no começo de cada um que estiver marcado
+- **Ctrl+A** — marca todos; **Ctrl+Shift+A** — desmarca todos
+- Com episódios marcados, o botão **Baixar** (**Alt+B**) passa a se
+  chamar, por exemplo, **Baixar 5 marcados**, e coloca todos na fila
+  de uma vez. Os que já estão baixados ou na fila são pulados, e o
+  programa fala um resumo
+- Com episódios marcados, **Ctrl+C** e o botão **Copiar links dos
+  marcados** (**Alt+C**) copiam os links de todos eles, um por linha.
+  **Ctrl+Shift+C** e **Copiar links do áudio dos marcados**
+  (**Alt+L**) copiam os links diretos dos arquivos de áudio
+
+Marcar não atrapalha o Enter: ele continua tocando o episódio
+selecionado.
 
 Os episódios aparecem na mesma ordem em que a plataforma do podcast
 publica — quase sempre do mais novo para o mais antigo.
 
 **Ouvindo um episódio**, na janela principal, tudo funciona como num
 arquivo comum: **B** e **Z** trocam de episódio, as **setas**, o
-**Ctrl+J**, **Home** e **End** avançam e retrocedem, **T** anuncia o
+**Ctrl+T**, **Home** e **End** avançam e retrocedem, **T** anuncia o
 tempo, e velocidade, tom e efeitos funcionam normalmente.
 
 **O programa lembra onde cada episódio parou.** Ao voltar num
@@ -285,7 +344,10 @@ cada episódio, desligue a opção nas Preferências.
 episódio de cada vez — dá para pedir vários, e eles entram numa fila.
 Na lista, cada episódio mostra se está **baixado**, **baixando** ou
 **na fila para baixar**, e o programa avisa quando cada download
-termina. Os arquivos ficam na pasta Música, em:
+termina. Quando um download falha por instabilidade do servidor, o
+programa tenta de novo sozinho, até 3 vezes, e avisa a cada tentativa;
+um download cortado no meio também é percebido e baixado de novo. Os
+arquivos ficam na pasta Música, em:
 
 ```
 Música\Winple Player\Podcasts\Nome do podcast\
@@ -299,8 +361,8 @@ hora, funciona sem internet e avançar ou retroceder é instantâneo. Se
 você apagar ou mover o arquivo por fora, o programa volta a tocar o
 episódio pela internet.
 
-Os episódios não baixados tocam direto da internet.
-Se você pular para um ponto que ainda não chegou, o programa avisa
+Os episódios não baixados tocam direto da internet. Se o servidor
+responder mal, o programa tenta de novo sozinho, até 3 vezes. Se você pular para um ponto que ainda não chegou, o programa avisa
 que aquele trecho ainda não foi baixado — é só tentar de novo daqui a
 pouco. Se a conexão cair no meio, ele avisa e guarda onde estava:
 **X** ou **Espaço** continuam dali.
@@ -333,7 +395,103 @@ lá precisa cadastrar os podcasts pelo endereço RSS.
 | **Ctrl+B** | Vai para a última faixa |
 | **Ctrl+Del** | Remove a faixa atual da lista |
 
-Na lista, **Enter** toca o item selecionado.
+Na lista (J):
+- **Enter** — toca o item selecionado
+- **Alt+B** — vai para o campo de busca: digitar parte do nome vai
+  filtrando a lista (sem diferença entre maiúsculas, minúsculas e
+  acentos)
+- **Shift+Enter** — põe a música na **fila a seguir**: ela toca logo
+  depois da atual. Várias músicas postas assim tocam na ordem em que
+  foram pedidas
+- **Delete** — remove da lista
+- A primeira letra continua pulando entre as músicas
+
+O menu **Lista** também tem **Limpar lista** e **Salvar lista como
+M3U**.
+
+### Biblioteca
+
+| Tecla | O que faz |
+|---|---|
+| **Ctrl+M** | Abre a biblioteca |
+
+A biblioteca organiza suas músicas por **artista**, **álbum**,
+**gênero** e **ano**, a partir das etiquetas gravadas nos arquivos. Na
+primeira vez, o programa oferece a pasta Música e as suas pastas
+favoritas; as pastas se escolhem depois em **Biblioteca → Pastas da
+biblioteca**. A primeira leitura roda em segundo plano e fala o
+andamento a cada 10 segundos; nas vezes seguintes, o programa só lê o
+que mudou. Para ler de novo na hora, use **Biblioteca → Atualizar
+biblioteca**. Ao abrir o programa, nada da biblioteca é carregado.
+
+Dentro da biblioteca:
+- **Enter** — entra no artista ou álbum; numa música, toca a partir
+  dela
+- **Backspace** ou **Esc** — volta um nível; Esc no primeiro nível
+  fecha a biblioteca
+- **Ctrl+Enter** — toca tudo do artista, álbum, gênero ou ano
+- **Shift+Enter** — põe na fila a seguir
+- **Alt+E** — enfileira no fim da lista
+- **Alt+I** — informações da música
+- **Alt+B** — busca em tudo
+- **Alt+V** — "Ver por": Artistas, Álbuns, Gêneros, Anos, Todas as
+  músicas ou Adicionadas recentemente
+- A primeira letra pula para os itens da lista, como no J
+
+Tocando algo pela biblioteca, **Esc** na janela principal reabre a
+biblioteca onde você estava, sem parar a música.
+
+Um álbum separado em subpastas, como CD1 e CD2, aparece como dois
+álbuns. Os vídeos ficam fora da biblioteca, que é só de músicas.
+Remover uma pasta da biblioteca não apaga nenhum arquivo do computador.
+
+### Vídeos
+
+O Winple toca vídeos (MP4, MKV, AVI, MOV, WMV, WebM e outros) do mesmo
+jeito que as músicas: abra pelo **L**, pela pasta, pelo Explorer ou por
+um arquivo compactado. A imagem aparece na janela do programa, e o som
+passa pelo volume, balanço, equalizador, normalizador e plugins VST,
+como o das músicas. O programa acerta a sincronia entre a voz e a
+imagem sozinho, sem nenhum ajuste.
+
+| Tecla | O que faz |
+|---|---|
+| **F11** | Tela cheia (Esc ou F11 de novo sai) |
+| **F2** | Troca a faixa de áudio (por exemplo, português / inglês) |
+| **F3** | Troca a legenda (ou desliga) |
+| **Alt+V** | Menu Vídeo: escolhe o áudio e a legenda pela lista |
+
+Com a opção **Preferir áudio em português nos vídeos** ligada (no menu
+Vídeo ou nas Preferências), um vídeo dublado já começa no áudio em
+português.
+
+### Arquivos MIDI
+
+Arquivos MIDI (`.mid`, `.midi`, `.rmi`, `.kar`) tocam com um soundfont,
+o conjunto de sons dos instrumentos. O programa já vem com o
+**GeneralUser GS**. Para usar outro, vá em **Preferências → Escolher
+soundfonts para arquivos MIDI**: ali dá para adicionar os seus
+(`.sf2`, `.sf3` ou `.sfz`), escolher qual usar e abrir a pasta de
+soundfonts.
+
+### Botões de mídia
+
+O Winple responde aos botões de fones de ouvido e caixas de som
+Bluetooth (tocar e pausar, próxima e anterior, conforme os botões que o
+aparelho tiver) e às teclas de mídia do teclado (tocar/pausar,
+próxima, anterior e parar), mesmo com ele minimizado.
+
+No Windows 10 e 11, o Winple aparece no painel de mídia do Windows (ao
+lado do controle de volume), mostrando o que está tocando. Na rádio,
+aparece a música do momento, quando a rádio informa.
+
+- Os botões de volume do fone continuam controlando o volume do Windows
+  ou do próprio fone, como em qualquer programa.
+- Como em qualquer player, os botões ficam com o último programa que
+  tocou alguma coisa: se você estava num vídeo do navegador e depois
+  deu play no Winple, os botões passam a ser do Winple.
+- O recurso pode ser desligado nas Preferências, na opção "Responder
+  aos botões de mídia".
 
 ### Equalizador, efeitos e normalizador
 
@@ -386,6 +544,7 @@ não irem parar no parâmetro errado.
 | Tecla | O que faz |
 |---|---|
 | **F1** | Mostra a lista de atalhos de teclado |
+| **Shift+F1** | Mostra as novidades desta versão (também em Ajuda → O que há de novo nesta versão) |
 | **Ctrl+P** | Abre as Preferências |
 | **Alt** | Abre os menus |
 | **Alt+F4** | Fecha o programa (na hora, mesmo com rádio tocando) |
@@ -400,6 +559,9 @@ não irem parar no parâmetro errado.
 - Ouvindo uma **rádio favorita**: Esc para a rádio e volta para a
   **lista de rádios favoritas**, já na rádio que estava tocando. Esc de
   novo volta para a janela principal.
+- Tocando algo pela **biblioteca**: Esc reabre a biblioteca onde você
+  estava, sem parar a música.
+- Vendo um **vídeo em tela cheia**: Esc sai da tela cheia.
 
 Voltando à janela principal por esse caminho, sem escolher nada nas
 listas, o que estava tocando é fechado e a janela fica limpa (o ponto
@@ -449,14 +611,63 @@ para tudo entrar em vigor.
 
 ---
 
-## Verificar atualizações
+## Atualizações
 
 O programa confere sozinho, discretamente, se existe uma versão mais
 nova no GitHub logo depois de abrir — sem interromper nada se não
-houver novidade ou se não conseguir verificar. Encontrando algo novo,
-pergunta se você quer abrir o navegador para baixar (nunca baixa nem
-instala sozinho). Dá para conferir manualmente a qualquer momento em
-**Ajuda → Verificar atualizações**.
+houver novidade ou se não conseguir verificar. Dá para conferir a
+qualquer momento em **Ajuda → Verificar atualizações**, e desligar a
+verificação automática nas Preferências.
+
+Encontrando uma versão nova, ele pergunta antes de fazer qualquer
+coisa. Respondendo **"Sim, baixar e instalar"**:
+
+1. O programa baixa a atualização, falando o andamento, e confere se o
+   arquivo chegou inteiro. O download pode ser cancelado a qualquer
+   momento.
+2. Ele pergunta se pode fechar para instalar.
+3. O Windows pede a permissão de costume. Depois disso, a instalação
+   acontece sem perguntas e o Winple abre de novo sozinho, já
+   atualizado, com todas as suas configurações. Respondendo "Não" na
+   permissão do Windows, o Winple continua aberto na versão atual.
+
+Se o download falhar por algum motivo, o programa oferece abrir o
+navegador, como antigamente.
+
+O **Winple portátil** também se atualiza por dentro, na mesma pasta
+onde está, mantendo as configurações e sem a pergunta de permissão do
+Windows (ela só aparece se a pasta for protegida, como Arquivos de
+Programas).
+
+Depois de cada atualização, as novidades da versão aparecem sozinhas,
+uma vez, quando o Winple abre. Para vê-las de novo, use **Shift+F1**.
+
+---
+
+## Diagnóstico e suporte
+
+Quando algo não funciona, o Winple tem duas ferramentas para ajudar o
+suporte a descobrir o motivo:
+
+- **Ajuda → Verificar arquivos do Winple** — confere se os arquivos de
+  áudio e vídeo do programa estão todos no lugar e, se houver problema,
+  copia um pequeno relatório para colar num e-mail ao suporte.
+- **Gravar registro de diagnóstico** (nas Preferências, desligado por
+  padrão) — ligado, o Winple registra o que acontece e qualquer erro
+  inesperado, no arquivo `registro_winple.txt`. Ele se abre por
+  **Ajuda → Abrir pasta do registro de diagnóstico**. Para usar: ligue
+  a opção, repita o que deu problema e mande o arquivo ao suporte.
+
+Quando um vídeo não toca porque falta um arquivo da parte de vídeos
+(em geral, removido pelo antivírus), o Winple diz exatamente qual
+arquivo falta e como resolver. Cada atualização instala de novo, por
+inteiro, a parte de vídeos; por isso, atualizar ou reinstalar o
+programa por cima já repara esses arquivos.
+
+Se o arquivo de configurações estiver danificado e grande demais, o
+Winple o deixa de lado sozinho (como `config_danificado.json`), volta
+às configurações padrão e avisa. Rádios, podcasts e biblioteca não são
+afetados.
 
 ---
 
@@ -474,8 +685,10 @@ No menu **Arquivo → Preferências** (ou **Ctrl+P**), você pode ajustar:
 - **Permitir mais de uma instância** — por padrão, só uma janela do
   programa abre por vez; tentar abrir de novo só traz a janela já
   aberta pra frente.
-- **Registrar argumentos em log** — só para diagnóstico (grava o que
-  outro programa, como o DOSVOX, mandou abrir).
+- **Gravar registro de diagnóstico** — desligado por padrão. Ligado,
+  o programa registra o que acontece e qualquer erro inesperado, para
+  enviar ao suporte (veja "Diagnóstico e suporte"). Substitui as duas
+  opções de log que existiam antes.
 - **Abrir a última playlist ao iniciar** — ligado por padrão; se
   desmarcar, o programa abre limpo, sem carregar a sessão anterior.
 - **Ao abrir um único arquivo, carregar também as outras faixas da
@@ -486,6 +699,10 @@ No menu **Arquivo → Preferências** (ou **Ctrl+P**), você pode ajustar:
   Desligando, a barra de status continua mostrando o número, só para
   de falar — exceto o aviso de risco de distorção acima de 100%, que
   sempre é falado, independente desta opção.
+- **Responder aos botões de mídia** — ligado por padrão. Fones e
+  caixas Bluetooth e as teclas de mídia do teclado controlam o Winple
+  (veja "Botões de mídia").
+- **Verificar atualizações ao abrir o programa** — ligado por padrão.
 - **Modo portátil** — guarda favoritos e configurações na própria
   pasta do programa, em vez do perfil do Windows, pra levar num
   pendrive. Precisa fechar e abrir o programa de novo pra valer.
@@ -509,25 +726,32 @@ No menu **Arquivo → Preferências** (ou **Ctrl+P**), você pode ajustar:
 - **Tentar reconectar rádio antes de avançar** — se uma rádio cair, o
   programa tenta reconectar até 3 vezes, esperando cada vez mais entre
   as tentativas, antes de desistir ou passar para a próxima favorita.
-- **Registrar conexões com as rádios em log** — desligado por padrão.
-  Grava cada conexão do programa com rádios e podcasts no arquivo
-  `conexoes.log`, na pasta de dados. Útil para investigar problemas de
-  conexão ou bloqueio.
 - **Ao terminar um episódio, tocar o próximo da lista** — ligado por
   padrão. Desligado, o programa para ao fim de cada episódio.
 - **Episódios guardados por podcast** — quantos episódios mais
   recentes de cada podcast o programa mostra e guarda: **Todos**
   (padrão), 50, 100, 150, 300, 500 ou 1000. Ao mudar, a nova escolha
   vale da próxima vez que você abrir cada podcast.
+- **Preferir áudio em português nos vídeos** — ligado por padrão. Um
+  vídeo dublado já começa no áudio em português (a mesma opção do menu
+  Vídeo).
+- **Escolher soundfonts para arquivos MIDI** — escolhe o conjunto de
+  sons usado nos arquivos MIDI (veja "Arquivos MIDI").
 
 ---
 
 ## Integração com o Windows
 
-O registro de "Reproduzir com Winple Player" no menu de contexto do
-Windows, e o registro como aplicativo padrão, são feitos pelo
+O registro de "Reproduzir com Winple Player" e "Enfileirar no Winple
+Player" no menu de contexto do Windows (para arquivos de áudio, vídeo
+e pastas), e o registro como aplicativo padrão, são feitos pelo
 **instalador** (duas opções na hora de instalar) — não é preciso (nem
-possível) fazer isso de dentro do programa.
+possível) fazer isso de dentro do programa. A cópia portátil não
+registra nada no Windows.
+
+**"Enfileirar no Winple Player"** soma os arquivos ou a pasta ao fim da
+lista atual, sem interromper o que está tocando — o mesmo que o **E**
+e o **Shift+E** dentro do programa.
 
 **Abrir vários arquivos pelo Explorer:** selecione as músicas e aperte
 Enter (ou use "Reproduzir com Winple Player"). Todas entram numa lista
@@ -542,7 +766,12 @@ as pastas favoritas — pela pasta não há limite.
 
 ## Formatos suportados
 
-**Áudio:** MP3, WAV, OGG, FLAC, M4A, AAC, WMA
+**Áudio:** MP3, WAV, OGG, FLAC, M4A, AAC, WMA, Opus, APE (Monkey's
+Audio), MPC (Musepack), WV (WavPack), TTA, OFR/OFS (OptimFROG)
+**MIDI:** MID, MIDI, RMI, KAR
+**Vídeo:** MP4, MKV, AVI, MOV, WMV, WebM, FLV, M4V, MPG, MPEG, TS,
+M2TS, 3GP, OGV, VOB
+**Compactados:** ZIP, RAR, 7z, TAR, TAR.GZ (TGZ), TAR.BZ2, TAR.XZ
 **Listas:** M3U, M3U8, PLS
 **Rádios:** streams por HTTP e HTTPS (Icecast e Shoutcast, inclusive
 servidores Shoutcast antigos). Rádios em HLS (`.m3u8` como fonte ao
@@ -563,14 +792,18 @@ Suas rádios favoritas, podcasts e configurações ficam em:
 ├── radios_WinplePlayer.json             (suas rádios favoritas)
 ├── podcasts_WinplePlayer.json           (seus podcasts e episódios)
 ├── podcasts_estado_WinplePlayer.json    (onde cada episódio parou e quais foram ouvidos)
-├── config.json                          (suas preferências)
-└── conexoes.log                         (só se o log de conexões estiver ligado)
+├── biblioteca_WinplePlayer.db           (a biblioteca de músicas)
+└── config.json                          (suas preferências)
 ```
 
 (Ou na própria pasta do programa, se o **modo portátil** estiver
 ativado.)
 
 Você chega lá rápido pelo menu **Ajuda → Abrir pasta de dados**.
+
+O registro de diagnóstico, quando ligado, fica à parte, em
+`%LOCALAPPDATA%\Winple Player\registro_winple.txt` — o menu **Ajuda →
+Abrir pasta do registro de diagnóstico** leva até ele.
 
 Os episódios de podcast **baixados** ficam em outro lugar, na sua
 pasta Música: `Música\Winple Player\Podcasts\`.
@@ -609,8 +842,21 @@ entre as tentativas de reconexão, desiste depois de poucas, não abre
 conexões duplicadas com a mesma rádio e nunca abre mais de 20
 conexões em 10 minutos com o mesmo servidor. Se esse limite for
 atingido, o programa avisa e espera alguns minutos antes de tentar de
-novo. Para investigar um bloqueio, ligue o log de conexões nas
+novo. Para investigar um bloqueio, ligue o registro de diagnóstico nas
 Preferências.
+
+**Um vídeo não toca, mas as músicas tocam. O que fazer?**
+Quase sempre é o antivírus, que removeu ou bloqueou algum arquivo da
+parte de vídeos. O Winple avisa qual arquivo falta. Use **Ajuda →
+Verificar arquivos do Winple** para conferir, libere a pasta do Winple
+no antivírus e instale o programa de novo por cima (ou atualize): a
+instalação repõe a parte de vídeos inteira, sem mexer nas suas
+configurações.
+
+**Abri um arquivo compactado e a lista não voltou na próxima vez.**
+É de propósito: os arquivos descompactados são apagados quando o
+Winple fecha, para não acumular no computador. É só abrir o arquivo
+compactado de novo (Ctrl+Alt+L).
 
 **Como o programa se identifica para rádios e podcasts?**
 Como "WinplePlayer", seguido da versão. Nos podcasts, isso ajuda os
@@ -628,7 +874,16 @@ Desenvolvido por Leandro Souza.
 Motor de áudio: **BASS**, de un4seen developments
 (www.un4seen.com) — gratuita para uso não-comercial.
 
-Suporte a velocidade/tom preservados: **BASS_FX**. Suporte a plugins
-VST: **BASS_VST**, por Bjoern Petersen para Silverjuke.net (LGPL).
+Suporte a velocidade/tom preservados: **BASS_FX**. Arquivos MIDI:
+**BASSMIDI**, com o soundfont **GeneralUser GS**, de S. Christian
+Collins. Suporte a plugins VST: **BASS_VST**, por Bjoern Petersen para
+Silverjuke.net (LGPL).
+
+Vídeos: **libVLC**, do projeto VideoLAN (www.videolan.org), sob a
+licença LGPL.
+
+Arquivos compactados: **7-Zip**, de Igor Pavlov (www.7-zip.org), sob a
+licença GNU LGPL; o código de descompactação de RAR segue a restrição
+da licença unRAR.
 
 Este programa é distribuído gratuitamente.
